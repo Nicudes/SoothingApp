@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SoothingWaveApp.MainPage"
+             BackgroundImageSource="Forest"
+             Title="Home">
+<StackLayout>
+        <StackLayout HorizontalOptions="Center">
+            <Label Text="Choose your calm place" FontSize="20" TextColor="AntiqueWhite" Margin="10"/>
+        </StackLayout>
+    
+    <StackLayout VerticalOptions="CenterAndExpand">
+            <Button Clicked="Forest_Clicked" Text="Forest" FontAttributes="Bold"/>
+            <Button Clicked="Snow_Clicked" Text="Snowy forest" FontAttributes="Bold"/>
+            <Button Clicked="Ocean_Clicked"  Text="Ocean" FontAttributes="Bold"/>
+            <Button Clicked="Sunset_Clicked" Text="Sunset" FontAttributes="Bold"/>
+            <Button Clicked="Marketplace_Clicked" Text="Marketplace" FontAttributes="Bold"/>
+            <Button Clicked="Rain_Clicked" Text="Rain" FontAttributes="Bold"/>
+            <Button Clicked="Fireplace_Clicked" Text="Fireplace" FontAttributes="Bold"/>
+        </StackLayout>
+        <StackLayout HorizontalOptions="Center">
+            <Label Text="By Huy Tran and Andreas Carlsson" FontSize="9" TextColor="White"/>
+        </StackLayout>
+    
+</StackLayout>
+
+</ContentPage>
