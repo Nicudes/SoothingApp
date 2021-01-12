@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Plugin.SimpleAudioPlayer;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -21,10 +22,11 @@ namespace SoothingWaveApp
 
         protected override void OnAppearing()
         {
-            var stream = GetStreamFromFile("SoothingWaveApp.Sounds.Fireplace.mp3");
-            var audio = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.Current;
-            audio.Load(stream);
-            audio.Play();
+            ISimpleAudioPlayer player = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.Current;
+            player.Loop = true;
+            player.Volume = 50;
+            player.Load(GetStreamFromFile("Fireplace.mp3"));
+            player.Play();
 
             base.OnAppearing();
         }
@@ -38,7 +40,7 @@ namespace SoothingWaveApp
         {
             var assembly = typeof(App).GetTypeInfo().Assembly;
 
-            var stream = assembly.GetManifestResourceStream("yourprojectname." + filename);
+            var stream = assembly.GetManifestResourceStream("SoothingWaveApp." + filename);
 
             return stream;
         }
