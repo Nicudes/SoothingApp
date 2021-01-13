@@ -25,7 +25,7 @@ namespace SoothingWaveApp
         void PlaySound()
         {
             player.Loop = true;
-            player.Volume = 20;
+            player.Volume = 0.1;
             player.Load(GetStreamFromFile("BirdSplash.mp3"));
             player.Play();
         }
