@@ -20,19 +20,37 @@ namespace SoothingWaveApp
             InitializeComponent();
         }
 
-        protected override void OnAppearing()
+        ISimpleAudioPlayer player = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.Current;
+  
+
+        void PlaySound()
         {
-            ISimpleAudioPlayer player = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.Current;
             player.Loop = true;
             player.Volume = 50;
             player.Load(GetStreamFromFile("Fireplace.mp3"));
             player.Play();
+        }
+        void StopSound()
+        {
+            player.Stop();
+        }
+
+        protected override void OnAppearing()
+        {
+            PlaySound();
 
             base.OnAppearing();
         }
 
+        protected override void OnDisappearing()
+        {
+            player.Stop();
+            base.OnDisappearing();
+        }
+
         private async void Back_Clicked(object sender, EventArgs e)
         {
+            StopSound();
            await Navigation.PopAsync();
         }
 
@@ -40,7 +58,7 @@ namespace SoothingWaveApp
         {
             var assembly = typeof(App).GetTypeInfo().Assembly;
 
-            var stream = assembly.GetManifestResourceStream("SoothingWaveApp." + filename);
+            var stream = assembly.GetManifestResourceStream("SoothingWaveApp.Sounds." + filename);
 
             return stream;
         }

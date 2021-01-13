@@ -3,8 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SoothingWaveApp.MainPage"
              BackgroundImageSource="Forest"
-             Title="Home">
-<StackLayout>
+             Title="Home"
+             NavigationPage.HasNavigationBar="False">
+    <StackLayout>
         <StackLayout HorizontalOptions="Center">
             <Label Text="Choose your calm place" FontSize="20" TextColor="AntiqueWhite" Margin="10"/>
         </StackLayout>

@@ -1,4 +1,7 @@
 ﻿using System;
+using Plugin.SimpleAudioPlayer;
+using System.IO;
+using System.Reflection;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -13,6 +16,40 @@ namespace SoothingWaveApp
         public MainPage()
         {
             InitializeComponent();
+        }
+
+
+        ISimpleAudioPlayer player = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.Current;
+
+
+        void PlaySound()
+        {
+            player.Loop = true;
+            player.Volume = 20;
+            player.Load(GetStreamFromFile("BirdSplash.mp3"));
+            player.Play();
+        }
+
+        protected override void OnDisappearing()
+        {
+            player.Stop();
+            base.OnDisappearing();
+        }
+
+        protected override void OnAppearing()
+        {
+            PlaySound();
+
+            base.OnAppearing();
+        }
+
+        Stream GetStreamFromFile(string filename)
+        {
+            var assembly = typeof(App).GetTypeInfo().Assembly;
+
+            var stream = assembly.GetManifestResourceStream("SoothingWaveApp.Sounds." + filename);
+
+            return stream;
         }
 
         private async void Forest_Clicked(object sender, EventArgs e)

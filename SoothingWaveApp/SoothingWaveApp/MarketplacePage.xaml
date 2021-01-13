@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SoothingWaveApp.MarketplacePage"
              Title="Marketplace"         
-             BackgroundImageSource="Market.png">
+             BackgroundImageSource="Market.png"
+             NavigationPage.HasNavigationBar="False">
     <StackLayout>
         <ImageButton Clicked="Back_Clicked" Source="backButtonWhite.png" HeightRequest="50" WidthRequest="50" VerticalOptions="Start" HorizontalOptions="Start" BackgroundColor="Transparent" Margin="10" />
 

@@ -11,13 +11,25 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Fireplace.mp3" />
+    <None Remove="Sounds\BirdSplash.mp3" />
+    <None Remove="Sounds\CalmAmbientBackground.mp3" />
     <None Remove="Sounds\Fireplace.mp3" />
+    <None Remove="Sounds\ForestBird.mp3" />
+    <None Remove="Sounds\Market.mp3" />
+    <None Remove="Sounds\OceanWavesHard.mp3" />
+    <None Remove="Sounds\RainRoof.mp3" />
+    <None Remove="Sounds\RelaxSunset.mp3" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Fireplace.mp3" />
+    <EmbeddedResource Include="Sounds\BirdSplash.mp3" />
+    <EmbeddedResource Include="Sounds\CalmAmbientBackground.mp3" />
     <EmbeddedResource Include="Sounds\Fireplace.mp3" />
+    <EmbeddedResource Include="Sounds\ForestBird.mp3" />
+    <EmbeddedResource Include="Sounds\Market.mp3" />
+    <EmbeddedResource Include="Sounds\OceanWavesHard.mp3" />
+    <EmbeddedResource Include="Sounds\RainRoof.mp3" />
+    <EmbeddedResource Include="Sounds\RelaxSunset.mp3" />
   </ItemGroup>
 
   <ItemGroup>

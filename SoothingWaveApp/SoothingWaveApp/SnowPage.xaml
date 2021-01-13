@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SoothingWaveApp.SnowPage"
              Title="Snow"             
-             BackgroundImageSource="SnowForest.png">
+             BackgroundImageSource="SnowForest.png"
+             NavigationPage.HasNavigationBar="False">
     <StackLayout>
         <ImageButton Clicked="Back_Clicked" Source="backButtonBlack.png" HeightRequest="50" WidthRequest="50" VerticalOptions="Start" HorizontalOptions="Start" BackgroundColor="Transparent" Margin="10" />
 
